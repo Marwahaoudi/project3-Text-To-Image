@@ -6,8 +6,8 @@ import io
 from dotenv import load_dotenv
 import time  # Pour ajouter un délai
 
-# ✅ Put this first
-st.set_page_config(page_title="🖼️ AI Image Generator", page_icon="🎨")
+# Put this first
+st.set_page_config(page_title="AI Image Generator", page_icon="🎨")
 
 # Load environment variables
 load_dotenv()
@@ -17,7 +17,7 @@ api_key = os.getenv("HUGGINGFACE_API_KEY")
 api_url = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 headers = {"Authorization": f"Bearer {api_key}"}
 
-# 🎨 Customize CSS Style
+# Customize CSS Style
 st.markdown("""
     <style>
         body {
