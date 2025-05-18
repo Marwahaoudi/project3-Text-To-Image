@@ -1,1 +1,1 @@
-#🖼️ Project: Text-to-Image
+# Project3: Text-to-Image
