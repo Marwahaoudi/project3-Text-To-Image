@@ -4,22 +4,25 @@ import streamlit as st
 from PIL import Image
 import io
 from dotenv import load_dotenv
-import time
+import time  # Pour ajouter un délai
 
-# Configuration de la page
-st.set_page_config(page_title="AI Image Generator", page_icon="🖼️ ")
+# Put this first
+st.set_page_config(page_title="AI Image Generator", page_icon="🎨")
 
-# Chargement de la clé API depuis .env
+# Load environment variables
 load_dotenv()
 api_key = os.getenv("HUGGINGFACE_API_KEY")
 
-# URL de l'API Hugging Face
+# Hugging Face API URL
 api_url = "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-3.5-large"
 headers = {"Authorization": f"Bearer {api_key}"}
 
-# Personnalisation CSS
+#  Customize CSS Style
 st.markdown("""
     <style>
+        body {
+            background-color: #f4f6f9;  /* Light grey background */
+        }
         .stButton > button {
             background-color: #6c63ff;
             color: white;
@@ -38,84 +41,40 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Titre principal
-st.title("🖼️  Générateur d'images par IA")
-st.markdown("Décris une image que tu veux créer, l'IA va la générer pour toi !")
+# Main title
+st.title("🖼️ AI Image Generator")
+st.markdown("Describe what you'd like to generate, and the AI will create an image for you!")
 
-#  Colonnes pour l'entrée
-col1, col2 = st.columns([3, 1])
+# User input
+prompt = st.text_input("📝 Enter a description for the image:")
 
-with col1:
-    prompt = st.text_input("📝 Description de l’image :")
-
-with col2:
-    guidance = st.slider("🎯 Guidance", 1.0, 20.0, 7.5, step=0.5)
-
-# Paramètres supplémentaires
-num_inference_steps = st.slider("🧠 Étapes d’inférence", 10, 100, 50, step=10)
-
-# Exemples
-examples = [
-    "A magical forest with glowing trees",
-    "A futuristic robot painting a canvas",
-    "A dragon flying over a medieval city",
-    "An astronaut relaxing on Mars",
-]
-example = st.selectbox("💡 Choisir un exemple :", [""] + examples)
-if example:
-    prompt = example
-
-# Historique
-if "history" not in st.session_state:
-    st.session_state.history = []
-
-# Génération de l’image
-if st.button("✨ Générer l’image") and prompt:
-    with st.spinner("⏳ Génération de l’image en cours..."):
+if st.button("✨ Generate Image") and prompt:
+    with st.spinner("⏳ The image is being generated..."):
+        # Initialize progress bar and timer
         progress_bar = st.progress(0)
-        start_time = time.time()
+        start_time = time.time()  # Start timer
 
         data = {
             "inputs": prompt,
             "parameters": {
-                "guidance_scale": guidance,
-                "num_inference_steps": num_inference_steps
+                "guidance_scale": 7.5,
+                "num_inference_steps": 50
             }
         }
 
-        # Effet de progression simulée
+        # Simulate the generation process with time and progress update
         for i in range(1, 101):
-            time.sleep(0.01)
-            progress_bar.progress(i)
+            time.sleep(0.05)  # Simulate time for generation (for demo purposes)
+            progress_bar.progress(i)  # Update the progress bar
 
-        # Requête vers l'API Hugging Face
+        end_time = time.time()  # End timer
+        generation_time = round(end_time - start_time, 2)  # Calculate time spent
+
         response = requests.post(api_url, headers=headers, json=data)
-        end_time = time.time()
-        duration = round(end_time - start_time, 2)
 
         if response.status_code == 200:
-            image_bytes = io.BytesIO(response.content)
-            image = Image.open(image_bytes)
-
-            st.image(image, caption=f"✅ Image générée en {duration}s", use_container_width=True)
-            st.success("Image générée avec succès !")
-
-            #  Bouton de téléchargement
-            st.download_button(
-                label="📥 Télécharger l’image",
-                data=image_bytes,
-                file_name="image_ai.png",
-                mime="image/png"
-            )
-
-            #  Sauvegarde dans l'historique
-            st.session_state.history.append((prompt, image))
-
+            image = Image.open(io.BytesIO(response.content))
+            # Use the container width instead of column width
+            st.image(image, caption=f"✅ Image generated successfully ", use_container_width=True)
         else:
-            st.error(f"❌ Erreur {response.status_code}: {response.text}")
-
-# Affichage de l'historique
-if st.session_state.history:
-    st.markdown("## 🕓 Historique")
-    for old_prompt, old_image in reversed(st.session_state.history[-3:]):
-        st.image(old_image, caption=f"📝 {old_prompt}", use_container_width=True)
+            st.error(f"❌ Error {response.status_code}: {response.text}")
