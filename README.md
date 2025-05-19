@@ -55,7 +55,6 @@ Create a .env file with the following content:
  ```bash
 HF_TOKEN=your_token_here
 ```
-### 4. Launch the app:
 ## Objectives
 - Build an interactive front-end for text-to-image generation
 - Learn to use Hugging Face's Inference API in production
