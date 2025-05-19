@@ -3,7 +3,7 @@
 
 Click the image below to watch the project demo video:
 
-[Watch the video]()
+[Watch the video](https://drive.google.com/file/d/1Y1eaE1CQCGnH5xZRCyHtrKVLRv2Y_Jbl/view?usp=sharing)
 
 ## 🌐 Hosted Application
 
