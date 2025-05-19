@@ -52,7 +52,7 @@ pip install -r requirements.txt
 ### 4. Add Hugging Face API Token
 Create a .env file with the following content:
  ```bash
-HF_TOKEN=
+HF_TOKEN=your_token_here
 ```
 ### 5. Launch the app:
 ## Objectives
