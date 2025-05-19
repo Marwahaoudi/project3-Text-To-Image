@@ -74,8 +74,8 @@ User ➜ Streamlit Interface ➜ Hugging Face API ➜ Generated Image
 
 | Prompt                        | Generated Image |
 |------------------------------|-----------------|
-| *"A cute cat wearing glasses reading a book"*   | ![Example 1](t2.PNG) |
-| *"a castle floating in space"* | ![Example 2](images/castle.png) |
+| *"A cute cat wearing glasses reading a book"*   | ![Example 1](images/t2.PNG) |
+| *"A wizard casting a spell in a glowing forest"* | ![Example 2](images/T4.PNG) |
 
 > 💡 Tip: Create a folder named `images/` in your project directory and place sample output images there (e.g., `cat.png`, `castle.png`). This helps users visualize what the app can generate.
 
