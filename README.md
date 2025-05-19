@@ -27,7 +27,7 @@ The goal is to demonstrate how to connect a front-end interface built with Strea
 - **Hanane Saidi**
 - **Marwa Haoudi**
 
-## 1. Technologies Used
+## Technologies Used
 
 - Python 3.12
 - Streamlit – Web app interface
@@ -35,7 +35,8 @@ The goal is to demonstrate how to connect a front-end interface built with Strea
 - Requests – HTTP requests to API
 - dotenv – Secure handling of API tokens
 - Pillow – Image processing and visualizatio
-### 2. Clone the Project from GitHub
+## Environment Setup 
+### 1. Clone the Project from GitHub
 
 Make sure git is installed.  
 In your terminal or Anaconda Prompt:
@@ -44,17 +45,17 @@ In your terminal or Anaconda Prompt:
 git clone https://github.com/Marwahaoudi/project3-Text-To-Image.git
 cd project3-Text-To-Image.git
 ```
-### 3. Install Required Libraries
+### 2. Install Required Libraries
  ```bash
 pip install -r requirements.txt
 
 ```
-### 4. Add Hugging Face API Token
+### 3. Add Hugging Face API Token
 Create a .env file with the following content:
  ```bash
 HF_TOKEN=your_token_here
 ```
-### 5. Launch the app:
+### 4. Launch the app:
 ## Objectives
 - Build an interactive front-end for text-to-image generation
 - Learn to use Hugging Face's Inference API in production
@@ -70,6 +71,7 @@ User ➜ Streamlit Interface ➜ Hugging Face API ➜ Generated Image
 - Streamlit sends the request with token to Hugging Face.
 - The API returns the image.
 - Streamlit displays the image.
+
 ## 🖼️ Example Outputs
 
 | Prompt                        | Generated Image |
