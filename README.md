@@ -87,3 +87,8 @@ User ➜ Streamlit Interface ➜ Hugging Face API ➜ Generated Image
 - Simple and clean Streamlit interface
 - Hosted online with easy access
 - API token handling via .env for security
+
+## Acknowledgments
+
+- Our module instructor, Abdelhak Mahmoudi, for his guidance and support throughout the project.
+
