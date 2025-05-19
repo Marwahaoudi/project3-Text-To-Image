@@ -77,6 +77,12 @@ User ➜ Streamlit Interface ➜ Hugging Face API ➜ Generated Image
 | *"A cute cat wearing glasses reading a book"*   | ![Example 1](images/t2.PNG) |
 | *"A wizard casting a spell in a glowing forest"* | ![Example 2](images/T4.PNG) |
 
-> 💡 Tip: Create a folder named `images/` in your project directory and place sample output images there (e.g., `t2.png`, `T4.png`). This helps users visualize what the app can generate.
+> Tip: Create a folder named `images/` in your project directory and place sample output images there (e.g., `t2.png`, `T4.png`). This helps users visualize what the app can generate.
 
+## Features
 
+- Enter any text prompt to generate an image
+- Uses pre-trained models via Hugging Face Inference API
+- Simple and clean Streamlit interface
+- Hosted online with easy access
+- API token handling via .env for security
