@@ -8,7 +8,7 @@ Click the image below to watch the project demo video:
 ## 🌐 Hosted Application
 
 The application is deployed on **Streamlit Cloud**.  
-👉 [Click here to access the Text-to-Image App](https://project3-text-to-image-knncbxtbscvuedsbaugxp4.streamlit.app/)
+[Click here to access the Text-to-Image App](https://project3-text-to-image-knncbxtbscvuedsbaugxp4.streamlit.app/)
 
 ---
 
