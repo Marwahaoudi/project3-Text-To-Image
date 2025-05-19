@@ -52,8 +52,9 @@ pip install -r requirements.txt
 ### 4. Add Hugging Face API Token
 Create a .env file with the following content:
  ```bash
-HF_TOKEN=your_huggingface_token_here
+HF_TOKEN=
 ```
+### 5. Launch the app:
 ## Objectives
 - Build an interactive front-end for text-to-image generation
 - Learn to use Hugging Face's Inference API in production
@@ -69,4 +70,13 @@ User ➜ Streamlit Interface ➜ Hugging Face API ➜ Generated Image
 - Streamlit sends the request with token to Hugging Face.
 - The API returns the image.
 - Streamlit displays the image.
+## 🖼️ Example Outputs
+
+| Prompt                        | Generated Image |
+|------------------------------|-----------------|
+| *"A cute cat wearing glasses reading a book"*   | ![Example 1](images/t2.PNG) |
+| *"a castle floating in space"* | ![Example 2](images/castle.png) |
+
+> 💡 Tip: Create a folder named `images/` in your project directory and place sample output images there (e.g., `cat.png`, `castle.png`). This helps users visualize what the app can generate.
+
 
