@@ -5,6 +5,18 @@ Click the image below to watch the project demo video:
 
 [Watch the video]()
 
+## 🌐 Hosted Application
+
+The application is deployed on **Streamlit Cloud**.  
+👉 [Click here to access the Text-to-Image App](https://project3-text-to-image-knncbxtbscvuedsbaugxp4.streamlit.app/)
+
+---
+
+## Description
+
+This application allows users to generate images from textual descriptions (prompts) using the Hugging Face API.  
+It is built with Python and Streamlit, offering a simple and interactive interface for testing text-to-image generation
+
 ## Overview
 This project implements a Text-to-Image generation app using the Hugging Face Inference API. Users can input a prompt (e.g., "a futuristic city at sunset") and receive a generated image using a pre-trained model.
 
